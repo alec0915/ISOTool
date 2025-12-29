@@ -19,15 +19,11 @@ def makeFolder(directory,gameName):
         elif Path(newFolder+'\\game.iso').is_file():
             print(name,"exists as game.iso") 
         else:
-            print("Copying file")
-            shutil.copy2(str(folder_path)+'\\'+ gameName,newFolder)
+            print("Moving file")
+            shutil.move(str(folder_path)+'\\'+ gameName,newFolder)
             if Path(newFolder+'\\'+name+'.iso').is_file():
                 print('Renaming file to game.iso')
                 os.rename(newFolder+'\\'+name+'.iso',newFolder+'\\game.iso')
-
-
-
-
 
 for i in folder_path.glob('**/*.iso'):  #iterating through paths
     gamename=str(i).split('\\')[-1]       #extracted file name
