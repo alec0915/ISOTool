@@ -1,0 +1,1 @@
+Convert gamename.iso to gamename folder with game.iso inside
